@@ -1,0 +1,35 @@
+extend layout/_index
+
+
+block variables
+	- page.type = 'front-page';
+	- page.title = 'Главная';
+
+
+
+mixin site( args )
+	.col-xs-12.col-sm-6.col-md-4.col-lg-3: .sites__item.item
+		img.thumbnail.lazy( src="#", data-src=args.thumbnail, alt=args.title )
+		.wrap
+			h3.title: a( href="#" ) #{args.title}
+			.overflow
+				a.link.link--site( href="#", title="Открыть сайт" ) #[span.sr-only Открыть сайт]
+				a.link.link--more( href="#", title="Подробней" ) #[span.sr-only Подробней]
+
+
+
+block main
+	.sites: .container
+		.sites: .row.center-xs
+			+site( { title: 'День открытых дверей', thumbnail: src.img+'sites/openday.jpg' } )
+			+site( { title: 'Стратегические перспективы развития промышленных регионов Украины в условиях экономической турбулентности', thumbnail: src.img+'sites/ekonomi.jpg' } )
+			+site( { title: 'CRENG', thumbnail: src.img+'sites/creng.jpg' } )
+			+site( { title: 'Конкурс "Энергетика"', thumbnail: src.img+'sites/energy.jpg' } )
+			+site( { title: 'Университетский консорциум', thumbnail: src.img+'sites/centreuc.jpg' } )
+			+site( { title: 'BioArt', thumbnail: src.img+'sites/bioart.jpg' } )
+			+site( { title: 'Tempus Promeng', thumbnail: src.img+'sites/promeng.jpg' } )
+			+site( { title: 'DAAD - SSC', thumbnail: src.img+'sites/daad.jpg' } )
+			+site( { title: 'Энергетика, єкология и логистика', thumbnail: src.img+'sites/energetika.jpg' } )
+			+site( { title: 'Проект 90', thumbnail: src.img+'sites/project90.jpg' } )
+			+site( { title: 'Tempus WeNet', thumbnail: src.img+'sites/wenet.jpg' } )
+			+site( { title: 'Tempus MMATENG', thumbnail: src.img+'sites/mmateng.jpg' } )

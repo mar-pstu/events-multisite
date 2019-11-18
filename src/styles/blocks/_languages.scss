@@ -1,0 +1,48 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.languages {
+
+	list-style-type: none;
+	margin: 1em 0;
+	padding-left: 0;
+
+	li {
+		display: inline-block;
+	}
+
+	li + li {
+		margin-left: 1em;
+	}
+
+	.current {
+		padding: .1em 1em;
+		background-color: $brand-warning;
+		color: #fff;
+	}
+
+	a {
+		display: block;
+		padding: .1em 1em;
+		background-color: transparentize( $brand-primary, .9 );
+		transition: background-color .2s, color .2s;
+	}
+
+	a:hover {
+		text-decoration: none;
+		color: #fff;
+		background-color: $brand-primary;
+	}
+
+}

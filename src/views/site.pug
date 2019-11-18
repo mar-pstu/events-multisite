@@ -1,0 +1,46 @@
+extend layout/_index
+
+
+
+block variables
+	- page.type = 'front-page';
+	- page.title = 'Главная';
+
+
+
+block main
+	.siteinfo: .container
+		.row.middle-xs
+			.col-xs-12.col-sm-6
+				a( href="#" ): img.screen.lazy( src="#", data-src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fpstu.edu%2F?w=480" )
+			.col-xs-12.col-sm-6
+				h1 Название сайта
+				p.lead Подзаголовок сайта
+				p.lead: a( href="#" ) http://events.pstu.edu/
+				p
+					a.btn.btn-primary( href="#" ) Перейти на сайт
+					a.btn.btn-info( href="#" ) Вернуться на главную
+		.row
+			.col-xs-12.col-sm-4
+				h2 Последние записи
+				ul
+					li: a( href="#" ) Lorem ipsum dolor sit amet
+					li: a( href="#" ) consectetur adipisicing elit
+					li: a( href="#" ) Pariatur sequi repellat delectus
+					li: a( href="#" ) dolores saepe provident fugiat cum
+					li: a( href="#" ) porro mollitia, sint! Perferendis
+					li: a( href="#" ) illum, odio totam fugit quae
+					li: a( href="#" ) eveniet eum. Ullam, facere!
+			.col-xs-12.col-sm-4
+				h2 Страницы
+				ul
+					li: a( href="#" ) Lorem ipsum dolor sit amet
+					li: a( href="#" ) consectetur adipisicing elit
+					li: a( href="#" ) Pariatur sequi repellat delectus
+					li: a( href="#" ) dolores saepe provident fugiat cum
+					li: a( href="#" ) porro mollitia, sint! Perferendis
+					li: a( href="#" ) illum, odio totam fugit quae
+					li: a( href="#" ) eveniet eum. Ullam, facere!
+			.col-xs-12.col-sm-4
+				h2 Поиск
+				include forms/_search

@@ -1,0 +1,8 @@
+.bloginfo
+	a.custom-logo-link( href="/" ): img.custom-logo( src=src.img+'logo.png', alt=blog.name )
+	.wrap
+		if ( page.type == 'front-page' )
+			h1.name: a( href="home.html" ) #{blog.name}
+		else
+			.name: a( href="home.html" ) #{blog.name}
+		p.description #{blog.description}

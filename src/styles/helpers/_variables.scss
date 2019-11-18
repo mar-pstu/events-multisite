@@ -1,0 +1,56 @@
+//
+//	Переменные
+//
+
+
+$screen-sm:					576px;
+$screen-md:					768px;
+$screen-lg:					992px;
+$screen-xl:					1200px;
+$flexboxgrid-grid-columns: 12;
+$flexboxgrid-gutter-width: 20px;
+$flexboxgrid-outer-margin: 20px;
+$flexboxgrid-breakpoints:
+  xs $screen-sm 540px,
+  sm $screen-md 720px,
+  md $screen-lg 960px,
+  lg $screen-xl 1140px;
+$flexboxgrid-max-width: 1920px;
+$smallest: xs;
+
+
+
+$brand-default:         #404040;
+$brand-primary:         #d45e5e;
+$brand-success:         #FFC932;
+$brand-warning:         #FF6632;
+$brand-info:            #6FBFBF;
+
+
+
+$body-color: #ffffff;
+$titles-color: #404040;
+$text-color: $brand-default;
+$link-color: $titles-color;
+
+
+
+$font-size-base:		14px;
+$line-height-base:	24em / 14em;
+$line-height-computed: floor( $font-size-base * $line-height-base );
+
+
+
+$font-family-base: 'Roboto', sans-serif;
+
+
+
+$border-radius: 5px;
+
+$box-shadow: 0 0 .5em rgba( 0, 0, 0, .5 );
+
+
+$brand-facebook: #1877f2;
+$brand-twitter: #64a8f2;
+$brand-linkedin: #00659b;
+$brand-email: #eee;

@@ -1,0 +1,22 @@
+//
+//
+//  Шапка сайта
+//
+//
+
+
+.header {
+
+	padding: 1em 0;
+	background-color: $brand-primary;
+	color: #fff;
+
+	.bloginfo .name {
+		color: #fff;
+	}
+
+	.burger {
+		float: right;
+	}
+
+}

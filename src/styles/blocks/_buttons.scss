@@ -1,0 +1,33 @@
+
+
+
+
+
+
+
+
+
+
+
+
+.btn {
+
+
+	@extend %button;
+	margin-right: .5em;
+
+	&-default { @extend %button-default; }
+
+	&-primary { @extend %button-primary; }
+
+	&-success { @extend %button-success; }
+
+	&-warning { @extend %button-warning; }
+
+	&-info { @extend %button-info; }
+	
+	&-sm { @extend %button-small; }
+
+	&-lg { @extend %button-large; }
+
+}
