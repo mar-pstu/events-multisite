@@ -8,13 +8,10 @@ block variables
 
 
 mixin site( args )
-	.col-xs-12.col-sm-6.col-md-4.col-lg-3: .sites__item.item
+	.col-xs-12.col-sm-6.col-md-4.col-lg-3: a.sites__item.item( href="#" )
 		img.thumbnail.lazy( src="#", data-src=args.thumbnail, alt=args.title )
 		.wrap
-			h3.title: a( href="#" ) #{args.title}
-			.overflow
-				a.link.link--site( href="#", title="Открыть сайт" ) #[span.sr-only Открыть сайт]
-				a.link.link--more( href="#", title="Подробней" ) #[span.sr-only Подробней]
+			h3.title #{args.title}
 
 
 

@@ -10,7 +10,7 @@
 					<?php echo $content; ?>
 				</div>
 				<p>
-					<a class="permalink" href="<?php echo esc_attr( $permalink ); ?>"><?php _e( 'Подробней', STARTER_TEXTDOMAIN ); ?></a>
+					<a class="permalink" href="<?php echo esc_attr( $permalink ); ?>"><?php _e( 'Подробней', EVENTS_MULTISITE_TEXTDOMAIN ); ?></a>
 				</p>
 			</div>
 		</div>

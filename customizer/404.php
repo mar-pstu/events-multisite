@@ -8,30 +8,30 @@ if ( ! defined( 'ABSPATH' ) ) { exit; };
 
 
 $wp_customize->add_section(
-    STARTER_SLUG . '_error404',
+    "{$slug}_error404",
     array(
-        'title'            => __( 'Страница ошибки 404', STARTER_TEXTDOMAIN ),
+        'title'            => __( 'Страница ошибки 404', EVENTS_MULTISITE_TEXTDOMAIN ),
         'priority'         => 10,
-        'description'      => __( 'Якорь #error404', STARTER_TEXTDOMAIN ),
-        'panel'            => STARTER_SLUG
+        'description'      => __( 'Якорь #error404', EVENTS_MULTISITE_TEXTDOMAIN ),
+        'panel'            => $slug,
     )
 ); /**/
 
 
 
 $wp_customize->add_setting(
-    STARTER_SLUG . '_error404_title',
+    "{$slug}_error404_title",
     array(
-        'default'           => __( 'Ошибка 404', STARTER_TEXTDOMAIN ),
+        'default'           => __( 'Ошибка 404', EVENTS_MULTISITE_TEXTDOMAIN ),
         'transport'         => 'reset',
         'sanitize_callback' => 'sanitize_text_field',
     )
 );
 $wp_customize->add_control(
-    STARTER_SLUG . '_error404_title',
+    "{$slug}_error404_title",
     array(
-        'section'           => STARTER_SLUG . '_error404',
-        'label'             => __( 'Заголовок', STARTER_TEXTDOMAIN ),
+        'section'           => "{$slug}_error404",
+        'label'             => __( 'Заголовок', EVENTS_MULTISITE_TEXTDOMAIN ),
         'type'              => 'text',
     )
 ); /**/
@@ -39,7 +39,7 @@ $wp_customize->add_control(
 
 
 $wp_customize->add_setting(
-    STARTER_SLUG . '_error404_description',
+    "{$slug}_error404_description",
     array(
         'default'           => '',
         'transport'         => 'reset',
@@ -47,10 +47,10 @@ $wp_customize->add_setting(
     )
 );
 $wp_customize->add_control(
-    STARTER_SLUG . '_error404_description',
+    "{$slug}_error404_description",
     array(
-        'section'           => STARTER_SLUG . '_error404',
-        'label'             => __( 'Подзаголовок', STARTER_TEXTDOMAIN ),
+        'section'           => "{$slug}_error404",
+        'label'             => __( 'Подзаголовок', EVENTS_MULTISITE_TEXTDOMAIN ),
         'type'              => 'textarea',
     )
 ); /**/

@@ -2,7 +2,7 @@
 
 
 
-namespace starter;
+namespace events_multisite;
 
 
 
@@ -16,7 +16,7 @@ function get_custom_logo_img() {
 	if ( $custom_logo_id ) {
 		$result = sprintf(
 			'<img class="custom-logo" src="%1$s" alt="%2$s">',
-			wp_get_attachment_image_src( $custom_logo_id, 'thumbnail', false ),
+			wp_get_attachment_image_url( $custom_logo_id, 'thumbnail', false ),
 			get_bloginfo( 'name', 'display' )
 		);
 	}
@@ -38,14 +38,13 @@ function get_languages_list() {
 			'force_home'         => 0,
 			'echo'               => 0,
 			'hide_if_no_translation' => 0,
-			'hide_current'       => 1,
+			'hide_current'       => 0,
 			'post_id'            => ( is_singular() ) ? get_the_ID() : NULL,
 			'raw'                => 1,
 		) );
 		if ( ( $other ) && ( ! empty( $other ) ) ) {
-			$result[] = '<li class="current">' . $current . '</li>';
 			foreach ( $other as $lang ) $result[] = sprintf(
-				'<li><a href="%1$s">%2$s</a></li>',
+				( $current == $lang[ 'name' ] ) ? '<li class="current">%2$s</li>' : '<li><a href="%1$s">%2$s</a></li>',
 				$lang[ 'url' ],
 				$lang[ 'name' ]
 			);
@@ -65,7 +64,7 @@ function the_breadcrumb() {
 			if ( ! is_front_page() ) {
 				echo '<a href="';
 				echo home_url();
-				echo '">'.__( 'Главная', STARTER_TEXTDOMAIN );
+				echo '">'.__( 'Главная', EVENTS_MULTISITE_TEXTDOMAIN );
 				echo "</a> » ";
 				if ( is_category() || is_single() ) {
 						the_category(' ');
@@ -78,7 +77,7 @@ function the_breadcrumb() {
 				}
 			}
 			else {
-				echo __( 'Домашняя страница', STARTER_TEXTDOMAIN );
+				echo __( 'Домашняя страница', EVENTS_MULTISITE_TEXTDOMAIN );
 			}
 	}
 	$result = ob_get_contents();
@@ -127,11 +126,11 @@ function the_pager() {
 	foreach ( array(
 		'previous'  => array(
 			'entry'     => get_previous_post(),
-			'label'     => __( 'Смотреть предыдущий пост', STARTER_TEXTDOMAIN ),
+			'label'     => __( 'Смотреть предыдущий пост', EVENTS_MULTISITE_TEXTDOMAIN ),
 		),
 		'next'      => array(
 			'entry'     => get_next_post(),
-			'label'     => __( 'Смотреть следующий пост', STARTER_TEXTDOMAIN ),
+			'label'     => __( 'Смотреть следующий пост', EVENTS_MULTISITE_TEXTDOMAIN ),
 		),
 	) as $key => $value ) {
 		if ( $value[ 'entry' ] && ! is_wp_error( $value[ 'entry' ] ) ) {
@@ -157,7 +156,7 @@ function the_pager() {
 function the_thumbnail_image( $post_id, $size = 'thumbnail', $attribute = 'src' ) {
 	printf(
 		'<img class="lazy wp-post-thumbnail" src="#" data-%3$s="%1$s" alt="%2$s"/>',
-		( has_post_thumbnail( $post_id ) ) ? get_the_post_thumbnail_url( $post_id, $size ) : STARTER_URL . 'images/thumbnail.png',
+		( has_post_thumbnail( $post_id ) ) ? get_the_post_thumbnail_url( $post_id, $size ) : EVENTS_MULTISITE_URL . 'images/thumbnail.png',
 		the_title_attribute( array(
 			'before' => '',
 			'after'  => '',
