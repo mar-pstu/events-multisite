@@ -7,13 +7,14 @@
 if ( ! defined( 'ABSPATH' ) ) { exit; };
 
 
-$sites = get_sites( array(
-	'site__not_in'  => array( get_main_site_id() ),
-) );
+$sites = get_sites( [
+	'site__not_in'  => [ get_main_site_id() ],
+	'public'        => 1,
+	'archived'      => 0,
+] );
 
 
 ?>
-
 
 
 <?php if ( is_array( $sites ) && ! empty( $sites ) ) : ?>
